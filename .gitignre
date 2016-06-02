@@ -1,0 +1,10 @@
+
+#folder
+.idea/*
+*.iml
+*.class
+
+#NetBeans
+/nbproject/*
+manifest.mf
+build.xml
