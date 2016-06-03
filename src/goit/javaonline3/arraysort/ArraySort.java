@@ -19,6 +19,7 @@ public class ArraySort {
            }
        }
         System.out.println("Sorted array is:");
+
         for(int element : array){
             System.out.print(" " + element + " ");
         }
