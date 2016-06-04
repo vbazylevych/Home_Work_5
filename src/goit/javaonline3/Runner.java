@@ -12,7 +12,7 @@ public class Runner {
 
     public static void main(String[] args){
 
-        int arrayLength = 1;
+        int arrayLength = 1;//зачем инициализировать переменную тут? Зачем 1?
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter array length");
@@ -22,7 +22,7 @@ public class Runner {
 
             if(arrayLength > 0){
                 System.out.println("Enter " + arrayLength + " elements of array.");
-            }else{
+            }else{//http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html
                 System.out.println("Your array hasn't any elements. Please run program again!");
                 return;
             }
@@ -35,7 +35,7 @@ public class Runner {
         for(int i = 0; i < arrayLength; i++) {
             if(scanner.hasNextInt()) {
                 array[i] = scanner.nextInt();
-            }else {
+            }else {//http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html
                 System.out.println("You entered incorrect value of element. Please run program again");
                 return;
             }

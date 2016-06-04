@@ -4,7 +4,7 @@ package goit.javaonline3.searchminandmax;
  * Created by Ler4enko on 02.06.2016.
  */
 public class SearchMinAndMax {
-
+//что если сделать эти методы статическими?
     public void searchMin(int[] array){
         int min = array[0];
 
