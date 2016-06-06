@@ -1,7 +1,6 @@
 package goit.javaonline3;
 
-import goit.javaonline3.arraysort.ArraySort;
-import goit.javaonline3.searchminandmax.SearchMinAndMax;
+import goit.javaonline3.arraysort.WorkWithArray;
 
 import java.util.Scanner;
 
@@ -33,14 +32,11 @@ public class Runner {
                     }
                 }
 
-                System.out.println("Min element is " + SearchMinAndMax.searchMin(array));
-                System.out.println("Max element is " + SearchMinAndMax.searchMax(array));
+                System.out.println("Min element is " + WorkWithArray.searchMin(array));
+                System.out.println("Max element is " + WorkWithArray.searchMax(array));
                 System.out.println("Sorted array is:");
-                array = ArraySort.sortArray(array);
-
-                for (int element : array) {
-                    System.out.print(element + " ");
-                }
+                array = WorkWithArray.sortArray(array);
+                WorkWithArray.printArray(array);
             } else {//http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html
                 System.out.println("You entered incorrect value of length. Please run program again!");
             }
