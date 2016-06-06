@@ -1,6 +1,6 @@
 package goit.javaonline3;
 
-import goit.javaonline3.arraysort.WorkWithArray;
+import goit.javaonline3.workwitharray.WorkWithArray;
 
 
 /**

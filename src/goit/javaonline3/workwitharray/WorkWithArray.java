@@ -1,4 +1,4 @@
-package goit.javaonline3.arraysort;
+package goit.javaonline3.workwitharray;
 //зачем этот импорт?
 
 
