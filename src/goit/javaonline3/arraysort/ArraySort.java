@@ -9,10 +9,10 @@ public class ArraySort {
     //что если сделать эти методы статическими?
     //Видя название sortArray, я бы подумала что этот метод вернет мне отсортированный массив.
     //это было бы логично - мотод возвращает нам массив и мы уже потом что хотим, то с ним и делаем
-    public void sortArray(int[] array){
+    public static int[] sortArray(int[] array){
 
-       for(int j = array.length - 1; j > 0; j--){
-           for(int i = 0; i < j; i++){
+       for (int j = array.length - 1; j > 0; j--) {
+           for (int i = 0; i < j; i++){
                if(array[i] > array[i + 1]) {
                    int temp = array[i];
                    array[i] = array[i + 1];
@@ -20,10 +20,6 @@ public class ArraySort {
                }
            }
        }
-        System.out.println("Sorted array is:");
-
-        for(int element : array){
-            System.out.print(" " + element + " ");
-        }
+       return array;
     }
 }

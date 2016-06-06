@@ -5,26 +5,26 @@ package goit.javaonline3.searchminandmax;
  */
 public class SearchMinAndMax {
 //что если сделать эти методы статическими?
-    public void searchMin(int[] array){
+    public static int searchMin(int[] array){
         int min = array[0];
 
-        for(int i = 1; i < array.length ; i++){
+        for (int i = 1; i < array.length ; i++) {
             if (min > array[i]) {
                 min = array[i];
             }
         }
-        System.out.println("Min element is " + min);
+        return min;
     }
 
-    public void searchMax(int[] array){
+    public static int searchMax(int[] array){
         int max = array[0];
 
-        for (int i = 1; i < array.length; i++){
-            if(max < array[i]){
+        for (int i = 1; i < array.length; i++) {
+            if (max < array[i]) {
                 max = array[i];
             }
         }
-        System.out.println("Max element is " + max);
+       return max;
     }
 }
 
