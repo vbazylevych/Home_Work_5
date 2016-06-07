@@ -8,35 +8,47 @@ import java.util.Scanner;
  */
 public class WorkWithArray {
 
-    public static int[] enterArray() {
+    public static int getCorrectInt() {
+        boolean correctValueofInt = false;
+        int correctInt = 0;
 
-        Scanner scanner = new Scanner(System.in);
-        int[] array;
-
-        System.out.println("Enter array length");
-        if (scanner.hasNextInt()) {
-            int arrayLength = scanner.nextInt();
-
-            if (arrayLength > 0) {
-                array = new int[arrayLength];
-                System.out.println("Enter " + arrayLength + " elements of array.");
-
-                for (int i = 0; i < arrayLength; i++) {
-                    if (scanner.hasNextInt()) {
-                        array[i] = scanner.nextInt();
-                    } else {
-                        System.out.println("You entered incorrect value of element. Please run program again");
-                        array = null;
-                        break;
-                    }
-                }
+        while(!correctValueofInt) {
+            Scanner scanner = new Scanner(System.in);
+            if (scanner.hasNextInt()) {
+                correctInt = scanner.nextInt();
+                correctValueofInt = true;
             } else {
-                System.out.println("You entered incorrect value of length. Please run program again!");
-                array = null;
+                System.out.println("You entered incorrect value. Please try again");
             }
-        } else {
-            System.out.println("You entered incorrect value of length. Please run program again!");
-            array = null;
+        }
+        return correctInt;
+    }
+
+    public static int getCorrectPositiveInt() {
+        boolean correctValueofInt = false;
+        int correctPositiveInt = 0;
+
+        while(!correctValueofInt) {
+            correctPositiveInt = getCorrectInt();
+            if (correctPositiveInt <= 0) {
+                System.out.println("You enter value less or equal 0. Please try again.");
+            } else {
+                correctValueofInt = true;
+            }
+        }
+        return correctPositiveInt;
+    }
+
+    public static int[] fillArray() {
+
+        System.out.println("Enter array length.");
+
+        int arrayLength = getCorrectPositiveInt();
+        int[] array = new int[arrayLength];
+
+        System.out.println("Enter " + arrayLength + " elements of array.");
+        for (int i = 0; i < arrayLength; i++) {
+            array[i] = getCorrectInt();
         }
         return array;
     }
@@ -81,8 +93,12 @@ public class WorkWithArray {
         for (int element : array) {
             System.out.print(element + " ");
         }
+        System.out.println();
     }
 }
+
+
+
 
 //стр24-32
 //можно вынести в отдельный метод - fillArray(), например
