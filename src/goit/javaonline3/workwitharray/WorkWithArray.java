@@ -1,5 +1,4 @@
 package goit.javaonline3.workwitharray;
-//зачем этот импорт?
 
 
 import java.util.Scanner;
@@ -8,9 +7,7 @@ import java.util.Scanner;
  * Created by Ler4enko on 03.06.2016.
  */
 public class WorkWithArray {
-    //что если сделать эти методы статическими?
-    //Видя название sortArray, я бы подумала что этот метод вернет мне отсортированный массив.
-    //это было бы логично - мотод возвращает нам массив и мы уже потом что хотим, то с ним и делаем
+
     public static int[] enterArray() {
 
         Scanner scanner = new Scanner(System.in);
@@ -27,13 +24,13 @@ public class WorkWithArray {
                 for (int i = 0; i < arrayLength; i++) {
                     if (scanner.hasNextInt()) {
                         array[i] = scanner.nextInt();
-                    } else {//http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html
+                    } else {
                         System.out.println("You entered incorrect value of element. Please run program again");
                         array = null;
                         break;
                     }
                 }
-            } else {//http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-142311.html
+            } else {
                 System.out.println("You entered incorrect value of length. Please run program again!");
                 array = null;
             }
@@ -87,3 +84,22 @@ public class WorkWithArray {
     }
 }
 
+//стр24-32
+//можно вынести в отдельный метод - fillArray(), например
+
+//enterArray - очень большая вложенность циклов и условий. Если этого можно избежать - нужно избежать. Тут можно
+
+//System.out.println("You entered incorrect value of element. Please run program again");
+//array = null;
+//break;
+//
+//если у нас есть цель цакончить цикл или выполенение метода досрочно, нам не обязательно возвращаться через все вложенности.
+//Мы можем написать "return null;" в любом месте метода
+
+//если делать
+//return null
+//если выделить отдельные методы полчитьИнтБольшеНуля() (для длины массива) и заполнитьМассивИнтами()
+//тогда не будет этой огромной вложенности и кусков повторяющегося кода
+
+//если сейчас сделать красиво эти методы и потом, по мере получения новых знаний,
+//их дописывать - их можно будет копипастить из одной домашки в следующую)
