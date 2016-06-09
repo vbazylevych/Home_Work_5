@@ -23,7 +23,7 @@ public class WorkWithArray {
             return array;
         } catch (IllegalStateException e) {
             System.out.println("Your application is in incorrect state! We will try again");
-           return null;
+            return null;
         }
     }
 
