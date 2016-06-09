@@ -8,49 +8,54 @@ import java.util.Scanner;
  */
 public class WorkWithArray {
 
-    public static int getCorrectInt() {
-        boolean correctValueofInt = false;
-        int correctInt = 0;
+    public static int[] AskArray() throws NullPointerException {
 
-        while(!correctValueofInt) {
-            Scanner scanner = new Scanner(System.in);
-            if (scanner.hasNextInt()) {
-                correctInt = scanner.nextInt();
-                correctValueofInt = true;
-            } else {
-                System.out.println("You entered incorrect value. Please try again");
+        System.out.println("Enter array length.");
+
+        try {
+            int arrayLength = getPositiveNonzeroInt();
+            int[] array = new int[arrayLength];
+
+            System.out.println("Enter " + arrayLength + " elements of array.");
+            for (int i = 0; i < arrayLength; i++) {
+                array[i] = getCorrectInt();
             }
+            return array;
+        } catch (IllegalStateException e) {
+            System.out.println("Your application is in incorrect state! We will try again");
+           return null;
         }
-        return correctInt;
     }
 
-    public static int getCorrectPositiveInt() {
+    public static int getPositiveNonzeroInt() {
         boolean correctValueofInt = false;
-        int correctPositiveInt = 0;
+        int PositiveInt = 0;
 
         while(!correctValueofInt) {
-            correctPositiveInt = getCorrectInt();
-            if (correctPositiveInt <= 0) {
+            PositiveInt = getCorrectInt();
+            if (PositiveInt <= 0) {
                 System.out.println("You enter value less or equal 0. Please try again.");
             } else {
                 correctValueofInt = true;
             }
         }
-        return correctPositiveInt;
+        return PositiveInt;
     }
 
-    public static int[] fillArray() {
+    public static int getCorrectInt() {
+        boolean CorrectValueOfInt = false;
+        int correctInt = 0;
 
-        System.out.println("Enter array length.");
-
-        int arrayLength = getCorrectPositiveInt();
-        int[] array = new int[arrayLength];
-
-        System.out.println("Enter " + arrayLength + " elements of array.");
-        for (int i = 0; i < arrayLength; i++) {
-            array[i] = getCorrectInt();
+        while(!CorrectValueOfInt) {
+            Scanner scanner = new Scanner(System.in);
+            if (scanner.hasNextInt()) {
+                correctInt = scanner.nextInt();
+                CorrectValueOfInt = true;
+            } else {
+                System.out.println("You entered incorrect value. Please try again");
+            }
         }
-        return array;
+        return correctInt;
     }
 
     public static int[] sortArray(int[] array){
@@ -98,13 +103,13 @@ public class WorkWithArray {
 }
 
 //стр27
-//getCorrectPositiveInt - Correct - а что такое correct? не понятно. getPositiveNonzeroInt - может как-то так...
+//getPositiveNonzeroInt - Correct - а что такое correct? не понятно. getPositiveNonzeroInt - может как-то так...
 //весь correct (кроме разве что correctValueofInt) в этом классе - не особо информативно
 
 //стр42
-//fillArray - в этом методе массив и создается в том числе, а не только заполняется.
+//AskArray - в этом методе массив и создается в том числе, а не только заполняется.
 //Может createArray()... или даже askArray().. мы запрашиваем все данные для массива у пользователя. Может есть лучше вариант
-//строки 50-53 - вот тут все таки fillArray()
+//строки 50-53 - вот тут все таки AskArray()
 
 //51
 //getCorrectInt() - получить Инт уже подразумевает, что мы хотим Инт, а не Стринг. Correct - what for?
