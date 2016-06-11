@@ -1,6 +1,7 @@
 package goit.javaonline3.workwitharray;
 
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -21,8 +22,8 @@ public class WorkWithArray {
                 array[i] = getCorrectInt();
             }
             return array;
-        } catch (IllegalStateException e) {
-            System.out.println("Your application is in incorrect state! We will try again");
+        } catch (InputMismatchException e) {
+            System.out.println("Last entered value is incorrect");
             return null;
         }
     }
@@ -42,8 +43,8 @@ public class WorkWithArray {
         return PositiveInt;
     }
 
-    public static int getCorrectInt() {
-        boolean CorrectValueOfInt = false;
+    public static int getCorrectInt() throws InputMismatchException{
+  /*      boolean CorrectValueOfInt = false;
         int correctInt = 0;
 
         while(!CorrectValueOfInt) {
@@ -55,7 +56,9 @@ public class WorkWithArray {
                 System.out.println("You entered incorrect value. Please try again");
             }
         }
-        return correctInt;
+        return correctInt; */
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
     }
 
     public static int[] sortArray(int[] array){

@@ -8,17 +8,19 @@ import goit.javaonline3.workwitharray.WorkWithArray;
 public class Runner {
 
      public static void main(String[] args) {
-
-         try{
-             runApplication();
-         } catch (NullPointerException e) {
-             System.out.println("AskArray() method returns null. We will try again");
-
-             runApplication();
-         }
+         runApplication();
      }
 
     public static void runApplication() {
+        try{
+            handleAray();
+        } catch (NullPointerException e) {
+            System.out.println("AskArray() method returns null. We will continue from start");
+            runApplication();
+        }
+    }
+
+    public static void handleAray() {
         int[] array = WorkWithArray.AskArray();
 
         System.out.println("Min element is " + WorkWithArray.searchMin(array));
