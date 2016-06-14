@@ -105,18 +105,11 @@ public class WorkWithArray {
     }
 }
 
-//стр27
-//getPositiveNonzeroInt - Correct - а что такое correct? не понятно. getPositiveNonzeroInt - может как-то так...
-//весь correct (кроме разве что correctValueofInt) в этом классе - не особо информативно
+//AskArray(), correctValueofInt() - некорректное название для метода, согласно code convention
 
-//стр42
-//AskArray - в этом методе массив и создается в том числе, а не только заполняется.
-//Может createArray()... или даже askArray().. мы запрашиваем все данные для массива у пользователя. Может есть лучше вариант
-//строки 50-53 - вот тут все таки AskArray()
+//PositiveInt - некорректное название для переменной, согласно code convention
 
-//51
 //getCorrectInt() - получить Инт уже подразумевает, что мы хотим Инт, а не Стринг. Correct - what for?
+//чем отличается getCorrectInt от getInt()? Какой смысл несет слово correct?
 
-//correctValueofInt() - mistake in camelCase
-
-//расположение методов в коде
+//закоментированный код не нужно оставлять. Не бойтесь с ним расстаться
