@@ -11,17 +11,17 @@ public class Runner {
          runApplication();
      }
 
-    public static void runApplication() {
+    private static void runApplication() {
         try{
-            handleAray();
+            handleArray();
         } catch (NullPointerException e) {
             System.out.println("AskArray() method returns null. We will continue from start");
             runApplication();
         }
     }
 
-    public static void handleAray() {
-        int[] array = WorkWithArray.AskArray();
+    private static void handleArray() {
+        int[] array = WorkWithArray.askArray();
 
         System.out.println("Min element is " + WorkWithArray.searchMin(array));
         System.out.println("Max element is " + WorkWithArray.searchMax(array));
@@ -35,7 +35,7 @@ public class Runner {
 
 //Aray - grammar mistake
 
-//runApplication(), handleAray() - почему бы не сделать эти методы приватными?
+//runApplication(), handleArray() - почему бы не сделать эти методы приватными?
 
 //рекурсия тут - не самое лучшее решение. Мы ее совершенно тут не контролируем, пользователь может вызвать метод
 //сколько угодное количество раз и прграмма может закончиться аварийно

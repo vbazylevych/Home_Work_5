@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class WorkWithArray {
 
-    public static int[] AskArray() throws NullPointerException {
+    public static int[] askArray() throws NullPointerException {
 
         System.out.println("Enter array length.");
 
@@ -19,7 +19,7 @@ public class WorkWithArray {
 
             System.out.println("Enter " + arrayLength + " elements of array.");
             for (int i = 0; i < arrayLength; i++) {
-                array[i] = getCorrectInt();
+                array[i] = getInt();
             }
             return array;
         } catch (InputMismatchException e) {
@@ -29,34 +29,21 @@ public class WorkWithArray {
     }
 
     public static int getPositiveNonzeroInt() {
-        boolean correctValueofInt = false;
-        int PositiveInt = 0;
+        boolean correctValueOfInt = false;
+        int positiveInt = 0;
 
-        while(!correctValueofInt) {
-            PositiveInt = getCorrectInt();
-            if (PositiveInt <= 0) {
+        while(!correctValueOfInt) {
+            positiveInt = getInt();
+            if (positiveInt <= 0) {
                 System.out.println("You enter value less or equal 0. Please try again.");
             } else {
-                correctValueofInt = true;
+                correctValueOfInt = true;
             }
         }
-        return PositiveInt;
+        return positiveInt;
     }
 
-    public static int getCorrectInt() throws InputMismatchException{
-  /*      boolean CorrectValueOfInt = false;
-        int correctInt = 0;
-
-        while(!CorrectValueOfInt) {
-            Scanner scanner = new Scanner(System.in);
-            if (scanner.hasNextInt()) {
-                correctInt = scanner.nextInt();
-                CorrectValueOfInt = true;
-            } else {
-                System.out.println("You entered incorrect value. Please try again");
-            }
-        }
-        return correctInt; */
+    public static int getInt() throws InputMismatchException{
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
@@ -109,7 +96,7 @@ public class WorkWithArray {
 
 //PositiveInt - некорректное название для переменной, согласно code convention
 
-//getCorrectInt() - получить Инт уже подразумевает, что мы хотим Инт, а не Стринг. Correct - what for?
-//чем отличается getCorrectInt от getInt()? Какой смысл несет слово correct?
+//getInt() - получить Инт уже подразумевает, что мы хотим Инт, а не Стринг. Correct - what for?
+//чем отличается getInt от getInt()? Какой смысл несет слово correct?
 
 //закоментированный код не нужно оставлять. Не бойтесь с ним расстаться
