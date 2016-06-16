@@ -92,11 +92,10 @@ public class WorkWithArray {
     }
 }
 
-//AskArray(), correctValueofInt() - некорректное название для метода, согласно code convention
+/*
+метод sortArray() можно сделать void
 
-//PositiveInt - некорректное название для переменной, согласно code convention
+методы getInt(), getPositiveNonzeroInt() не смотрятся в классе WorkWithArray
 
-//getInt() - получить Инт уже подразумевает, что мы хотим Инт, а не Стринг. Correct - what for?
-//чем отличается getInt от getInt()? Какой смысл несет слово correct?
-
-//закоментированный код не нужно оставлять. Не бойтесь с ним расстаться
+каждый раз когда мы хотим получить Инт нужно создавать обьект Сканнер?
+*/
