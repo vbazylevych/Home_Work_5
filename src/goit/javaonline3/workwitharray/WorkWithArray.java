@@ -28,7 +28,7 @@ public class WorkWithArray {
         }
     }
 
-    public static int getPositiveNonzeroInt() {
+    private static int getPositiveNonzeroInt() {
         boolean correctValueOfInt = false;
         int positiveInt = 0;
 
@@ -43,7 +43,7 @@ public class WorkWithArray {
         return positiveInt;
     }
 
-    public static int getInt() throws InputMismatchException{
+    private static int getInt() throws InputMismatchException{
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
